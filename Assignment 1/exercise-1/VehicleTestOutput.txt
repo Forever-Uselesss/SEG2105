@@ -1,0 +1,66 @@
+
+--- Testing error cases ---
+Case 1: java.lang.IllegalArgumentException: emptyWeight must be > 0
+Case 2: java.lang.IllegalArgumentException: cruiseSpeed must be <= MAX_SPEED (200.0)
+Case 3: java.lang.IllegalArgumentException: emptyWeight must be <= MAX_WEIGHT (80000.0)
+Case 4: java.lang.IllegalArgumentException: cruiseSpeed must be >= MIN_SPEED (25.0)
+
+--- Testing count() ---
+Number of Bike instances: 4
+Number of Car instances: 3
+Number of Plane instances: 3
+Number of Helicopter instances: 3
+
+--- Testing dump() ---
+--- Bike ---
+id            : 0
+emptyWeight   : 12.00 kg
+cruiseSpeed   : 20.00 km/h
+MAX_WEIGHT    : 200.00 kg
+MAX_SPEED     : 60.00 km/h
+MIN_SPEED     : 6.00 km/h
+REG_TIME      : 2025-09-24T22:27:36.224981400Z
+
+--- Car ---
+id            : 3
+emptyWeight   : 1300.00 kg
+cruiseSpeed   : 110.00 km/h
+MAX_WEIGHT    : 1500.00 kg
+MAX_SPEED     : 200.00 km/h
+MIN_SPEED     : 20.00 km/h
+REG_TIME      : 2025-09-24T22:27:36.225976Z
+
+--- Plane ---
+id            : 5
+emptyWeight   : 55000.00 kg
+cruiseSpeed   : 760.00 km/h
+MAX_WEIGHT    : 80000.00 kg
+MAX_SPEED     : 900.00 km/h
+MIN_SPEED     : 90.00 km/h
+REG_TIME      : 2025-09-24T22:27:36.225976Z
+
+--- Helicopter ---
+id            : 7
+emptyWeight   : 4500.00 kg
+cruiseSpeed   : 210.00 km/h
+MAX_WEIGHT    : 5000.00 kg
+MAX_SPEED     : 250.00 km/h
+MIN_SPEED     : 25.00 km/h
+REG_TIME      : 2025-09-24T22:27:36.225976Z
+
+--- Testing operate() ---
+Bike [0] starting
+Bike [0] moving at 20.00 km/h
+Bike [0] stopped
+
+Car [3] starting
+Car [3] moving at 110.00 km/h
+Car [3] stopped
+
+Plane [5] starting
+Plane [5] moving at 760.00 km/h
+Plane [5] stopped
+
+Helicopter [7] starting
+Helicopter [7] moving at 210.00 km/h
+Helicopter [7] stopped

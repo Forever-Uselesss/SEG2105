@@ -1,0 +1,102 @@
+@startuml Exercise 2 Class Diagram
+
+title University Management System
+
+class Student {
+    - studentID
+    - firstName
+    - lastName
+    - emailID
+    - dob
+    - probationStatus
+    - standingStatus
+    - finalGrades
+}
+
+class TeachingAssistant {
+    - taID
+    - firstName
+    - lastName
+    - emailID
+    - dob
+    - courses
+}
+
+class Program {
+    - programID
+    - name
+    - isDegree
+    - credits
+    - courses
+}
+
+interface Employee {
+    - employeeID
+    - firstName
+    - lastName
+    - emailID
+    - dob
+    - salary
+}
+
+class Course {
+    - courseID
+    - name
+    - professor
+    - TAs
+}
+
+class Professor {
+    - professorID
+    - name
+    - email
+    - courses
+}
+
+class AcademicCoordinator {
+    - coordinatorID
+    - firstName
+    - lastName
+    - emailID
+    - dob
+    - programs
+}
+
+class Faculty {
+    - facultyID
+    - name
+    - employees
+}
+
+class StudentEmployee {
+    - studentEmployeeID
+    - salary
+}
+
+class Alumnus {
+    - alumnusID
+    - name
+    - programsCompleted
+    - isMultipleDegree
+}
+
+Student --> "0..*" Program : enrolls in
+Program --> "1..*" Course : includes
+Course --> "1..*" Program : part of
+Course --> "1" Professor : taught by
+Course --> "0..*" TeachingAssistant : assisted by
+Student --> "1" Professor : mentored by
+Program --> "1" AcademicCoordinator : coordinated by
+AcademicCoordinator --> "1..*" Program : administers
+Employee <|--"1" Professor
+Employee <|--"1" TeachingAssistant
+Employee <|--"1" AcademicCoordinator
+Employee <|-- "1" StudentEmployee
+Employee --> "1" Faculty : works in
+
+Student --> "0..1" StudentEmployee : is a
+
+Student --> "0..1" Alumnus : becomes
+Alumnus --> "0..*" Program : completed
+
+@enduml

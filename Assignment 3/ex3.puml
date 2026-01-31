@@ -1,0 +1,10 @@
+@startuml Exercise 3 Class Diagram
+
+title Student State Machine
+
+[*] --> Enrolled
+Enrolled --> Probation : Starts in Probation
+Probation --> GoodStanding : Pass 5 subjects
+Probation --> Terminated : Fail 1 subjects
+GoodStanding --> Alumnus : Complete Program
+Alumnus --> MultipleDegreeAlumnus : complete another Program
